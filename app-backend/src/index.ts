@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { connectDatabase, disconnectDatabase } from './db/mongoose';
 import skillsRouter from './api/skills';
+import { applyGraphQLMiddleware } from './graphql/server';
 
 // Load environment variables
 dotenv.config();
@@ -56,6 +57,9 @@ app.get('/', (req, res) => {
 
 // API routes
 app.use('/api/v1/skills', skillsRouter);
+
+// GraphQL endpoint
+await applyGraphQLMiddleware(app, '/graphql');
 
 // Global error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
