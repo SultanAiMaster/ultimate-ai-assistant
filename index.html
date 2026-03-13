@@ -3,64 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate AI Assistant - Investment Opportunity</title>
-    <meta name="description" content="Ultimate AI Assistant - World's most powerful AI assistant with 1200+ automated skills by Sultan Ahmed from India">
-    <meta name="keywords" content="AI assistant, automation, Sultan Ahmed, Ultimate AI, investment">
+    <meta name="description" content="Ultimate AI Assistant - The Future of AI Automation. Revolutionary platform with 1200+ automated skills. Invest now in the future of artificial intelligence. This is the next big opportunity. Don't miss out on the AI revolution.">
+    <meta name="keywords" content="AI assistant, artificial intelligence, automation, future AI, AI investment, Ultimate AI, AI platform, 1200+ skills, AI startup, technology investment, next generation AI, automation revolution, invest in AI, AI technology">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#667eea">
+    <link rel="canonical" href="https://sultanaimaster.github.io/ultimate-ai-assistant/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sultanaimaster.github.io/ultimate-ai-assistant/">
+    <meta property="og:title" content="Ultimate AI Assistant - The Future of AI Automation">
+    <meta property="og:description" content="Invest in the future. 1200+ automated skills. This is the next AI revolution. Join us before it's too late.">
+    <meta property="og:image" content="https://sultanaimaster.github.io/ultimate-ai-assistant/og-image.png">
+    <meta property="og:site_name" content="Ultimate AI Assistant">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sultanaimaster.github.io/ultimate-ai-assistant/">
+    <meta name="twitter:title" content="Ultimate AI Assistant - The Future of AI Automation">
+    <meta name="twitter:description" content="Invest in the future of AI. 1200+ skills. This is the revolution. Don't miss out.">
+    <meta name="twitter:image" content="https://sultanaimaster.github.io/ultimate-ai-assistant/og-image.png">
+
+    <title>Ultimate AI Assistant - The Future of AI Automation | Invest Now</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a1a4a 100%);
             color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* 3D Background Effect */
+        .bg-3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-3d::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, transparent 60%);
+            top: -300px;
+            right: -200px;
+            animation: float1 20s infinite linear;
+            filter: blur(80px);
+        }
+
+        .bg-3d::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.3) 0%, transparent 60%);
+            bottom: -200px;
+            left: -200px;
+            animation: float2 25s infinite linear;
+            filter: blur(80px);
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-100px, 100px) rotate(180deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(100px, -100px) rotate(-180deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section with 3D Effect */
+        .hero {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
             text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 60px 40px;
+            padding: 120px 20px 80px;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(240, 147, 251, 0.3));
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(102, 126, 234, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(102, 126, 234, 0.5); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            text-shadow: 0 0 60px rgba(102, 126, 234, 0.5);
+            + .hero h1 .gradient {
+                background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #667eea 100%);
+                background-size: 200% 200%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: gradient-shift 5s ease infinite;
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #667eea 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            color: #f093fb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero .message {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* 3D Stats Cards */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            perspective: 1000px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            padding: 40px 30px;
             border-radius: 20px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-card h3 {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: none;
+        }
+
+        .stat-card p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Urgency Section */
+        .urgency {
+            background: linear-gradient(135deg, rgba(255, 87, 87, 0.2), rgba(255, 17, 1, 0.2));
+            border: 2px solid rgba(255, 87, 87, 0.4);
+            padding: 50px 40px;
+            border-radius: 25px;
+            margin: 80px 0;
+            animation: urgency-pulse 3s infinite;
             backdrop-filter: blur(10px);
         }
-        h1 { font-size: 48px; margin-bottom: 20px; }
-        .subtitle { font-size: 24px; margin-bottom: 30px; color: #f093fb; }
-        .stats { display: flex; gap: 40px; justify-content: center; margin: 40px 0; flex-wrap: wrap; }
-        .stat-item { flex: 1; min-width: 120px; }
-        .stat-item h3 { font-size: 42px; margin: 0 0 10px 0; }
-        .stat-item p { font-size: 16px; opacity: 0.8; }
-        .contact { background: rgba(255,255,255,0.15); padding: 40px; border-radius: 15px; margin-top: 40px; }
-        .contact a { display: block; color: white; text-decoration: none; font-size: 20px; margin: 15px 0; padding: 15px; border-radius: 10px; background: rgba(0,0,0,0.2); }
-        .contact a:hover { background: rgba(0,0,0,0.3); }
-        .contact p { font-size: 14px; opacity: 0.7; margin-bottom: 30px; }
-        footer { margin-top: 50px; font-size: 14px; opacity: 0.6; }
+
+        @keyframes urgency-pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 87, 87, 0.2); }
+            50% { box-shadow: 0 0 60px rgba(255, 87, 87, 0.4); }
+        }
+
+        .urgency h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ff5757;
+            margin-bottom: 20px;
+        }
+
+        .urgency p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(240, 147, 251, 0.3));
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            padding: 60px 50px;
+            border-radius: 30px;
+            margin: 80px 0;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            backdrop-filter: blur(15px);
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            animation: cta-glow 3s infinite;
+        }
+
+        @keyframes cta-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6); transform: translateY(-3px); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.6);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: white;
+            padding: 18px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            border: 3px solid rgba(102, 126, 234, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .secondary-button:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.8);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero .subtitle {
+                font-size: 20px;
+            }
+
+            .hero p, .hero .message {
+                font-size: 16px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .urgency h2 {
+                font-size: 26px;
+            }
+
+            .urgency p {
+                font-size: 18px;
+            }
+
+            .contact h2 {
+                font-size: 28px;
+            }
+
+            .contact p {
+                font-size: 16px;
+            }
+
+            .cta-button, .secondary-button {
+                width: 100%;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .urgency, .contact {
+                padding: 40px 25px;
+            }
+        }
     </style>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ultimate AI Assistant",
+        "url": "https://sultanaimaster.github.io/ultimate-ai-assistant/",
+        "description": "The Future of AI Automation with 1200+ automated skills. Invest in the future of artificial intelligence.",
+        "potentialAction": {
+            "@type": "ContactAction",
+            "target": "mailto:workchainofficial@gmail.com",
+            "name": "Contact for Investment"
+        }
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>🎭 Ultimate AI Assistant</h1>
-        <p class="subtitle">World's Most Powerful AI Assistant</p>
-        <p>Web-based AI automation platform with 1200+ automated skills.</p>
-        <p>Created by Sultan Ahmed from Assam, India.</p>
+    <div class="bg-3d"></div>
 
-        <div class="stats">
-            <div class="stat-item"><h3>1200+</h3><p>Skills</p></div>
-            <div class="stat-item"><h3>48x</h3><p>Productive</p></div>
-            <div class="stat-item"><h3>$136B</h3><p>Market</p></div>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                🚀 THE FUTURE IS HERE - INVEST NOW
+            </div>
+
+            <h1>
+                <span class="gradient">Ultimate AI Assistant</span>
+            </h1>
+
+            <p class="subtitle">The Future of AI Automation</p>
+
+            <p class="message">
+                This is the next big opportunity in artificial intelligence.
+                Don't wait. Join us before it's too late.
+            </p>
+
+            <p>
+                A revolutionary platform with <strong>1200+ automated skills</strong> that will change
+                how the world works forever. The AI revolution is now, and you can be part of it.
+            </p>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>1200+</h3>
+                    <p>Automated Skills</p>
+                </div>
+                <div class="stat-card">
+                    <h3>48x</h3>
+                    <p>More Productive</p>
+                </div>
+                <div class="stat-card">
+                    <h3>$136B</h3>
+                    <p>AI Market 2025</p>
+                </div>
+                <div class="stat-card">
+                    <h3>∞</h3>
+                    <p>Future Potential</p>
+                </div>
+            </div>
+
+            <div class="urgency">
+                <h2>⚡ TIME IS RUNNING OUT</h2>
+                <p>
+                    Early investors in AI technology are seeing massive returns.
+                    This is your chance to get into the next unicorn before everyone else.
+                    The window of opportunity is closing fast. Don't miss this chance to be part of the future.
+                </p>
+            </div>
+
+            <div class="contact">
+                <h2>🎯 INVESTORS NEEDED NOW</h2>
+                <p>
+                    We're looking for strategic partners who understand the magnitude of what we're building.
+                    This is the future of AI automation, and we want you to be part of it from the beginning.
+                    Contact us today to discuss investment opportunities.
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="mailto:workchainofficial@gmail.com" class="cta-button">
+                        📧 Invest Now - Contact Us
+                    </a>
+                    <a href="tel:+918638556847" class="secondary-button">
+                        📞 Call +91 86385 56847
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="contact">
-            <h2>🔗 Contact for Investment</h2>
-            <p>Seeking strategic partners to help bring this revolutionary product to market.</p>
-            <a href="mailto:workchainofficial@gmail.com">📧 workchainofficial@gmail.com</a>
-            <a href="tel:+918638556847">📞 +91 86385 56847</a>
-            <a href="https://github.com/SultanAiMaster" target="_blank">🐙 GitHub Profile</a>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ultimate AI Assistant. The Future of AI Automation. All rights reserved.</p>
         </div>
+    </footer>
 
-        <footer>&copy; 2026 Sultan Ahmed. All rights reserved.</footer>
-    </div>
+    <script>
+        // Smooth scroll and dynamic effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add scroll effects
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.stat-card, .urgency, .contact').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
