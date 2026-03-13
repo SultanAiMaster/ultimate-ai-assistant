@@ -41,12 +41,7 @@
     "@types/node": "^25.5.0",
     "typescript": "^5.9.3",
     "tsx": "^4.21.0",
-    "graphql": "^16.9.0",
-    "@apollo/server": "^4.10.1",
-    "@apollo/server-express": "^4.10.1",
     "class-validator": "^0.14.1",
-    "class-transformer": "^0.5.1",
-    "@types/class-validator": "^0.14.0",
-    "@types/class-transformer": "^0.5.1"
+    "class-transformer": "^0.5.1"
   }
 }
