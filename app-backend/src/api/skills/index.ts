@@ -1,5 +1,5 @@
 import express, { Router, Request, Response, NextFunction } from 'express';
-import { Skill } from '../../models/Skill';
+import { SimpleSkill } from '../../db/in-memory-store';
 import { z } from 'zod';
 
 const router = Router();
@@ -41,14 +41,14 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     }
 
     // Get skills with pagination
-    const skills = await Skill.find(filter)
+    const skills = await SimpleSkill.find(filter)
       .sort({ name: 1 })
       .skip(query.offset)
       .limit(Math.min(query.limit, 100))
       .lean();
 
     // Get total count
-    const total = await Skill.countDocuments(filter);
+    const total = await SimpleSkill.countDocuments(filter);
 
     res.json({
       success: true,
@@ -74,8 +74,8 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
  */
 router.get('/categories', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const categories = await Skill.distinct('category').sort();
-    const counts = await Skill.aggregate([
+    const categories = await SimpleSkill.distinct('category');
+    const counts = await SimpleSkill.aggregate([
       { $group: { _id: '$category', count: { $sum: 1 } } },
       { $sort: { count: -1 } }
     ]);
@@ -98,7 +98,7 @@ router.get('/categories', async (req: Request, res: Response, next: NextFunction
  */
 router.get('/risk-levels', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const counts = await Skill.aggregate([
+    const counts = await SimpleSkill.aggregate([
       { $group: { _id: '$riskLevel', count: { $sum: 1 } } },
       { $sort: { count: -1 } }
     ]);
@@ -119,7 +119,7 @@ router.get('/risk-levels', async (req: Request, res: Response, next: NextFunctio
 router.get('/tags', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const limit = parseInt(req.query.limit as string) || 50;
-    const tags = await Skill.aggregate([
+    const tags = await SimpleSkill.aggregate([
       { $unwind: '$tags' },
       { $group: { _id: '$tags', count: { $sum: 1 } } },
       { $sort: { count: -1 } },
@@ -141,7 +141,7 @@ router.get('/tags', async (req: Request, res: Response, next: NextFunction) => {
  */
 router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const skill = await Skill.findOne({ id: req.params.id }).lean();
+    const skill = await SimpleSkill.findOne({ id: req.params.id });
 
     if (!skill) {
       return res.status(404).json({
@@ -169,10 +169,10 @@ router.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
  */
 router.get('/stats/metadata', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const total = await Skill.countDocuments();
-    const categories = await Skill.distinct('category');
-    const riskLevels = await Skill.distinct('riskLevel');
-    const totalTags = await Skill.distinct('tags');
+    const total = await SimpleSkill.countDocuments();
+    const categories = await SimpleSkill.distinct('category');
+    const riskLevels = await SimpleSkill.distinct('riskLevel');
+    const totalTags = await SimpleSkill.distinct('tags');
 
     res.json({
       success: true,

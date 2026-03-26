@@ -1,18 +1,9 @@
-import {
-  Field,
-  ObjectType,
-  Arg,
-  Int,
-  ID,
-  String,
-  List,
-  Float,
-  InputType,
-  registerEnumType
-} from 'type-graphql';
-import { IsEnum, IsOptional, IsString } from 'class-validator';
+import 'reflect-metadata';
+import { Field, ObjectType, Int, registerEnumType } from 'type-graphql';
 
-// Enums
+// Register enums
+registerEnumType('RiskLevel', { name: 'RiskLevel' });
+
 export enum RiskLevel {
   LOW = 'low',
   MEDIUM = 'medium',
@@ -20,112 +11,27 @@ export enum RiskLevel {
   CRITICAL = 'critical'
 }
 
-export enum ParameterType {
-  STRING = 'string',
-  NUMBER = 'number',
-  BOOLEAN = 'boolean',
-  ARRAY = 'array',
-  OBJECT = 'object',
-  FILE = 'file',
-  URL = 'url'
-}
-
-// Input Types
-@InputType()
-export class SkillFilterInput {
-  @Field(() => String, { nullable: true })
-  @IsOptional()
-  @IsString()
-  category?: string;
-
-  @Field(() => RiskLevel, { nullable: true })
-  @IsOptional()
-  @IsEnum(RiskLevel)
-  riskLevel?: RiskLevel;
-
-  @Field(() => [String], { nullable: true })
-  @IsOptional()
-  tags?: string[];
-
-  @Field(() => String, { nullable: true })
-  @IsOptional()
-  @IsString()
-  search?: string;
-}
-
-@InputType()
-export class PaginationInput {
-  @Field(() => Int, { defaultValue: 50 })
-  @IsOptional()
-  limit?: number;
-
-  @Field(() => Int, { defaultValue: 0 })
-  @IsOptional()
-  offset?: number;
-}
-
-@InputType()
-export class SkillParameterInput {
-  @Field(() => String)
-  name!: string;
-
-  @Field(() => ParameterType)
-  type!: ParameterType;
-
-  @Field(() => Boolean)
-  required!: boolean;
-
-  @Field(() => String)
-  description!: string;
-
-  @Field(() => String, { nullable: true })
-  @IsOptional()
-  default?: string;
-}
-
-// Types
-@ObjectType()
-export class SkillParameter {
-  @Field(() => String)
-  name!: string;
-
-  @Field(() => ParameterType)
-  type!: ParameterType;
-
-  @Field(() => Boolean)
-  required!: boolean;
-
-  @Field(() => String)
-  description!: string;
-
-  @Field(() => String, { nullable: true })
-  default?: string;
-
-  @Field(() => [String], { nullable: true })
-  enum?: string[];
-}
-
 @ObjectType()
 export class Skill {
-  @Field(() => ID)
+  @Field()
   id!: string;
 
-  @Field(() => String)
+  @Field()
   name!: string;
 
-  @Field(() => String)
+  @Field()
   description!: string;
 
-  @Field(() => String)
+  @Field()
   category!: string;
 
   @Field(() => [String])
   tags!: string[];
 
-  @Field(() => String)
+  @Field()
   version!: string;
 
-  @Field(() => String)
+  @Field()
   author!: string;
 
   @Field(() => RiskLevel)
@@ -143,18 +49,39 @@ export class Skill {
   @Field(() => [String])
   examples!: string[];
 
-  @Field(() => String)
+  @Field()
   documentation!: string;
 
-  @Field(() => String)
-  createdAt!: string;
-
-  @Field(() => String)
-  updatedAt!: string;
+  @Field({ nullable: true })
+  paths?: {
+    skillFile?: string;
+    directory?: string;
+  };
 }
 
 @ObjectType()
-export class PaginationInfo {
+export class SkillParameter {
+  @Field()
+  name!: string;
+
+  @Field()
+  type!: string;
+
+  @Field()
+  required!: boolean;
+
+  @Field()
+  description!: string;
+
+  @Field({ nullable: true })
+  default?: any;
+
+  @Field(() => [String], { nullable: true })
+  enum?: string[];
+}
+
+@ObjectType()
+export class PaginationMeta {
   @Field(() => Int)
   total!: number;
 
@@ -164,7 +91,7 @@ export class PaginationInfo {
   @Field(() => Int)
   offset!: number;
 
-  @Field(() => Boolean)
+  @Field()
   hasMore!: boolean;
 }
 
@@ -173,13 +100,13 @@ export class SkillsData {
   @Field(() => [Skill])
   skills!: Skill[];
 
-  @Field(() => PaginationInfo)
-  pagination!: PaginationInfo;
+  @Field(() => PaginationMeta)
+  pagination!: PaginationMeta;
 }
 
 @ObjectType()
 export class CategoryCount {
-  @Field(() => String)
+  @Field()
   _id!: string;
 
   @Field(() => Int)

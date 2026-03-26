@@ -1,6 +1,7 @@
-import { Arg, Args, Mutation, Query, Resolver } from 'type-graphql';
+import 'reflect-metadata';
+import { Arg, Args, Mutation, Query, Resolver, Int } from 'type-graphql';
 import { Skill, SkillsData, CategoryCount, MetadataStats } from '../types/Skill';
-import { SkillFilterInput, PaginationInput } from '../types/Skill';
+import { SkillFilterInput, PaginationInput } from '../types/SkillInput';
 import { SkillModel } from '../../models/Skill';
 import { Types } from 'mongoose';
 

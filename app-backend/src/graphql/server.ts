@@ -1,5 +1,5 @@
 import { ApolloServer } from '@apollo/server';
-import { buildSchema } from 'type-graphql';
+import { buildSchema, Query, Resolver } from 'type-graphql';
 import { expressMiddleware } from '@apollo/server/express4';
 import { SkillResolver } from './resolvers/SkillResolver';
 

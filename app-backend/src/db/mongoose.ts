@@ -15,6 +15,8 @@ export async function connectDatabase(): Promise<void> {
 
     await mongoose.connect(MONGODB_URI, {
       // Mongoose 6+ options
+      connectTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 5000,
     });
 
     console.log('✅ MongoDB connected successfully');
@@ -36,7 +38,7 @@ export async function connectDatabase(): Promise<void> {
 
   } catch (error) {
     console.error('❌ Failed to connect to MongoDB:', error);
-    process.exit(1);
+    throw error;
   }
 }
 
